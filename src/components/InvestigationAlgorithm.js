@@ -30,8 +30,7 @@ function InvestigationAlgorithm(props) {
             );
         }
     }
-    // mysterious return - not sure why it's needed, but we need it
-    // beware if you remove! 
+    
     return (
         <></>
     );

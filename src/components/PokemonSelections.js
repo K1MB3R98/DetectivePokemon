@@ -9,14 +9,9 @@ function PokemonSelections(props) {
 
     useEffect(() => {
         let newState = [];
-        // This was in original code but we left it for reference
-            // It caused appending issues in the pokemon selection, it appends 5 more pokemon with click of radio buttons in previous section
-        // let newState = [...pokemon];
-
         for (let i = 0; i < 5; i++) {
             // Generate random pokemon id number
             let id = Math.floor(Math.random() * (898 - 1)) + 1;
-
             // API Call
             axios({
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -31,7 +26,7 @@ function PokemonSelections(props) {
                 });
                 setLoading(false);
             })
-            .catch(() => { console.log("error") })
+                .catch(() => { alert("No Pokémon available. Please try again.") })
         }
         setPokemon(newState);
     }, [props.selectedCrime]);
